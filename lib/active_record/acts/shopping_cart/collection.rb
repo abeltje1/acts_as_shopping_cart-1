@@ -9,8 +9,8 @@ module ActiveRecord
           cart_item = item_for(object)
 
           if cart_item
-            cumulative = cumulative == true ? cart_item.quantity : 0
-            cart_item.quantity = (cumulative + quantity)
+            #cumulative = cumulative == true ? cart_item.quantity : 0
+            cart_item.quantity += quantity
             cart_item.save
             cart_item
           else
