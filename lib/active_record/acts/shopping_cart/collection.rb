@@ -15,6 +15,7 @@ module ActiveRecord
             cart_item.price = price
             cart_item.save
             cart_item
+            "a"
           else
             shopping_cart_items.create(item: object, price: price, quantity: quantity, date_range: date_range)
           end
