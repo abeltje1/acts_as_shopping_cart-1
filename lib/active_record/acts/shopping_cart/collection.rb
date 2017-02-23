@@ -12,6 +12,7 @@ module ActiveRecord
             #cumulative = cumulative == true ? cart_item.quantity : 0
             cart_item.quantity += quantity
             cart_item.date_range = date_range
+            cart_item.price = price
             cart_item.save
             cart_item
           else
