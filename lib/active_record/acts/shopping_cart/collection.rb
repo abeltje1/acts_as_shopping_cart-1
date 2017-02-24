@@ -5,7 +5,7 @@ module ActiveRecord
         #
         # Adds a product to the cart
         #
-        def add(object, price, date_range, cumulative = true, wensen = "", quantity = 1)
+        def add(object, price, date_range, quantity = 1, cumulative = true, wensen = "")
           cart_item = item_for(object)
 
           if cart_item
