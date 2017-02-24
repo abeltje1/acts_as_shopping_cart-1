@@ -5,12 +5,12 @@ module ActiveRecord
         #
         # Adds a product to the cart
         #
-        def add(object, price, date_range, wensen = "", quantity = 1, cumulative = true)
+        def add(object, price, date_range, cumulative = true, wensen = "", quantity = 1)
           cart_item = item_for(object)
 
           if cart_item
-            #cumulative = cumulative == true ? cart_item.quantity : 0
-            cart_item.quantity += quantity
+            cumulative = cumulative == true ? cart_item.quantity : 0
+            cart_item.quantity = (cumulative + quantity)
             cart_item.date_range = date_range
             cart_item.price = price
             cart_item.save
