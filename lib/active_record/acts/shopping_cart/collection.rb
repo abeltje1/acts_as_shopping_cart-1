@@ -13,6 +13,7 @@ module ActiveRecord
             cart_item.quantity = (cumulative + quantity)
             cart_item.date_range = date_range
             cart_item.price = price
+            cart_item.wensen = wensen
             cart_item.save
             cart_item
           else
